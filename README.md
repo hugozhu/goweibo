@@ -1,7 +1,7 @@
 goweibo
 =======
 
-Weibo SDK for Golang
+Weibo SDK for Golang (http://hugozhu.myalert.info)
 
 # Usage
 
