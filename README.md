@@ -1,7 +1,7 @@
 goweibo
 =======
 
-Weibo SDK for Golang (http://hugozhu.myalert.info)
+Weibo SDK for Golang
 
 # Usage
 
@@ -19,3 +19,7 @@ func main() {
     }
 }
 ```
+
+# Author
+
+Hugo Zhu (http://hugozhu.myalert.info)
