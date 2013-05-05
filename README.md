@@ -3,6 +3,12 @@ goweibo
 
 Weibo SDK for Golang
 
+# Install
+
+```
+go get github.com/hugozhu/goweibo
+```
+
 # Usage
 
 Save weibo OAuth2 token to a local file named 'token', eg. "2.008TkTLDIQdqsD4bbfd082cchG3ABC"
