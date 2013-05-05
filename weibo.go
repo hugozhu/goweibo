@@ -117,9 +117,14 @@ func (e WeiboError) Error() string {
 	return fmt.Sprintf("%d %s %s", e.Error_Code, e.Err, e.Request)
 }
 
-func (s *Sina) TimeLine(uid int64, since_id int64, count int) []*WeiboPost {
+func (s *Sina) TimeLine(uid int64, screen_name string, since_id int64, count int) []*WeiboPost {
 	params := url.Values{}
-	params.Set("uid", strconv.FormatInt(uid, 10))
+	if uid > 0 {
+		params.Set("uid", strconv.FormatInt(uid, 10))
+	} else if screen_name != "" {
+		params.Set("screen_name", screen_name)
+	}
+
 	params.Set("since_id", strconv.FormatInt(since_id, 10))
 	params.Set("count", strconv.Itoa(count))
 	var posts WeiboPosts
