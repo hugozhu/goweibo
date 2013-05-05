@@ -13,7 +13,8 @@ var sina = &weibo.Sina{
 }
 
 func main() {
-    for _, p := range sina.TimeLine(0, "hugozhu", 0, 20) {
+    //fetch 20 weibo after 12345678
+    for _, p := range sina.TimeLine(0, "hugozhu", 12345678, 20) {
         log.Println(p)
     }
 }
