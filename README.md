@@ -5,9 +5,16 @@ Weibo SDK for Golang
 
 # Usage
 
-Save weibo OAuth2 token to a local file
+Save weibo OAuth2 token to a local file named 'token', eg. "2.008TkTLDIQdqsD4bbfd082cchG3ABC"
 
 ```
+package main
+
+import (
+    "github.com/hugozhu/goweibo"
+    "log"
+)
+
 var sina = &weibo.Sina{
     AccessToken: weibo.ReadToken("./token"),
 }
