@@ -193,10 +193,10 @@ func (s *Sina) StatusesUpload(status string, reader io.Reader) *WeiboPost {
 	return nil
 }
 
-func (s *Sina) Mentions() (posts *WeiboMention) {
+func (s *Sina) Mentions() (mentions *WeiboMention) {
 	params := url.Values{}
-	s.GET("/statuses/mentions.json", params, &posts)
-	return posts
+	s.GET("/statuses/mentions.json", params, &mentions)
+	return mentions
 }
 
 func (s *Sina) ShortUrlInfo(urls []string) []*WeiboUrlInfo {
