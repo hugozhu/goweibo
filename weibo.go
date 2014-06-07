@@ -83,6 +83,15 @@ type WeiboUser struct {
 	Verified_Reason   string
 }
 
+type WeiboMention struct {
+	Statuses        []WeiboPost
+	Hasvisible      bool
+	Previous_cursor int
+	Next_cursor     int
+	Total_number    int
+	Interval        int
+}
+
 type WeiboComment struct {
 	Id     int64
 	Text   string
@@ -182,6 +191,12 @@ func (s *Sina) StatusesUpload(status string, reader io.Reader) *WeiboPost {
 		return &v
 	}
 	return nil
+}
+
+func (s *Sina) Mentions() (mentions *WeiboMention) {
+	params := url.Values{}
+	s.GET("/statuses/mentions.json", params, &mentions)
+	return mentions
 }
 
 func (s *Sina) ShortUrlInfo(urls []string) []*WeiboUrlInfo {
